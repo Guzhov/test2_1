@@ -43,7 +43,7 @@ public class FilterTest {
         filterCars.clickFuelHybrid();
         filterCars.clickNotSold();
         filterCars.clickYearsOld();
-        filterCars.inputOdometer("1");
+        filterCars.inputOdometer(ConfProperties.getProperty("odometer_km"));
         filterCars.clickShow();
 
         int count = Integer.parseInt(ConfProperties.getProperty("countPages"));
