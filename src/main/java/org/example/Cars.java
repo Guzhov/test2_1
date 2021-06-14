@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;;
+import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 
@@ -46,16 +46,13 @@ public class Cars {
         String carName;
         while (i < 20) {
             carName = cars.get(i).getAttribute("textContent");
-
             int index1 = carName.indexOf("тыс. км");
             if (index1 == -1){
-                System.out.println("Ошибка: Не указан пробег автомобился");
                 return "Ошибка: Не указан пробег автомобиля";
             }
             i += 1;
     }
-        System.out.println("Тест №1 пройден");
-        return "1";
+        return "Test #1 passed";
 }
 
     /**
@@ -69,13 +66,11 @@ public class Cars {
             int index = carName.indexOf(",");
             String s = carName.substring(index+2, index+6);
             if (Integer.parseInt(s)<year){
-                System.out.println("Ошибка: Автомобиль имеет несоотвествующий год выпуска");
                 return "Ошибка: Автомобиль имеет несоотвествующий год выпуска";
             }
             i += 1;
         }
-        System.out.println("Тест №2 пройден");
-        return "2";
+        return "Test #2 passed";
     }
 
     /**
@@ -86,8 +81,7 @@ public class Cars {
             soldCars.getText();
             return "Ошибка: В списке проданный автомобиль";
         }catch (Exception err){
-            System.out.println("Тест №3 пройден");
-            return "3";
+            return "Test #3 passed";
         }
 
     }
